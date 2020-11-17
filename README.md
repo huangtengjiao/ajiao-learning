@@ -1,4 +1,2 @@
 # ajiao-learning
-学习使用
-测试
-????
+使用github的学习项目
