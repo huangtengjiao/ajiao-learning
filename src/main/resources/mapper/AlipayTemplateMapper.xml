@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.yundasys.member.alipay.template.dao.AlipayTemplateDao">
+
+
+	<insert id="saveSelfDefine" parameterType="java.lang.String" >
+		 ${_parameter}
+	</insert>
+	
+ 	<update id="updateSelfDefine" parameterType="java.lang.String" >
+		 ${_parameter}
+	</update>
+	
+ 	<delete id="deleteSelfDefine" parameterType="java.lang.String" >
+		 ${_parameter}
+	</delete>
+	
+	<select id="selectSelfDefine" parameterType="java.lang.String" resultType="java.util.LinkedHashMap"> 
+		${_parameter} 
+	</select>
+
+	<insert id="saveAlipayUserids"   >
+		 insert into alipay_userid${index} (userids) values (${userids})
+	</insert>
+	
+	<select id="countTable" resultType="int"> 
+		select count(1) from ${table}
+	</select>
+	
+	<select id="getUserid" resultType="com.yundasys.member.alipay.template.domain.AlipayUserid"> 
+		select id,userids from ${table} order by id limit ${from},1
+	</select>
+	
+	
+</mapper>
